@@ -1,2 +1,2 @@
 # Login
-Dieses Repo enthält die 2# Einführungsaufgabe des SEP 2022/23.
+Dieses Repo enthält Einführungsaufgabe #2 des SEP 2022/23.
