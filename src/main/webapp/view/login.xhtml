@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html" xmlns:f="jakarta.faces.core">
+
+<h:head>
+	<title>Login-Page:</title>
+	<h:outputStylesheet name="css/style.css" />
+	<script>
+		function clearUserName() {
+			document.getElementById('j_idt8:username').value = '';
+		}
+	</script>
+</h:head>
+<h:body onload="clearUserName()">
+	<h1>Login:</h1>
+	<h:form>
+		<h:panelGrid columns="1" cellpadding="1" cellspacing="1">
+			<h:outputLabel value="Username: " for="username" />
+			<h:inputText id="username" value="#{manager.username}">
+			</h:inputText>
+			<h:message for="username" styleClass="message" />
+			<h:outputLabel value="Password: " for="password" />
+			<h:inputSecret type="password" id="password"
+				value="#{manager.password}" />
+			<h:message for="password" styleClass="message" />
+			<h:commandButton id="manager" value="Login"
+				action="#{manager.validate()}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
