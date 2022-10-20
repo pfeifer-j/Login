@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="5.0" id="Login"
+  xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd">
+
+  <display-name>Jakarta Server Faces Demo</display-name>
+
+  <servlet>
+    <servlet-name>facesServlet</servlet-name>
+    <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>facesServlet</servlet-name>
+    <!-- It's not recommended to use /faces/* since JSF 2.x here, but *.xhtml.
+         See https://stackoverflow.com/a/7889247/4293396 -->
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+
+  <context-param>
+    <param-name>jakarta.faces.PROJECT_STAGE</param-name>
+    <param-value>Development</param-value>
+  </context-param>
+
+  <welcome-file-list>
+    <welcome-file>view/login.xhtml</welcome-file>
+  </welcome-file-list>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>downloadProtectedArea</web-resource-name>
+      <url-pattern>/view/*</url-pattern>
+    </web-resource-collection>
+  </security-constraint>
+
+  <resource-env-ref>
+    <description>Object factory for the CDI Bean Manager.</description>
+    <resource-env-ref-name>BeanManager</resource-env-ref-name>
+    <resource-env-ref-type>
+      jakarta.enterprise.inject.spi.BeanManager
+    </resource-env-ref-type>
+  </resource-env-ref>
+
+</web-app>

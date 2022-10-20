@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #ccd2d3;
+    padding: 4px 4px 4px 4px;
+    border: 1px solid;
+}
+
+td {
+    padding: 0px 5px 0px 5px;
+}
+
+tr.odd {
+    background-color: #edf4f5; 
+}
+
+tr.even {
+    background-color: #dae0e1;
+}
+
+.message {
+    color: red;
+}

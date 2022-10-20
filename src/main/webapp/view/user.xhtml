@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="jakarta.faces.html" xmlns:f="jakarta.faces.core">
+
+<head>
+<title>Edit User</title>
+</head>
+<h:body>
+	<h1>Edit User</h1>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Username: " for="username" />
+			<h:outputLabel id="username" value="#{editor.username}"
+				required="true" />
+			<h:message for="username" styleClass="message" />
+
+			<h:outputLabel value="Password: " for="password" />
+			<input type="password" id="password" value="#{editor.password}"
+			placeholder="&#9679;" />
+			<h:message for="password" styleClass="message" />
+
+			<h:outputLabel value="Name: " for="name" />
+			<h:inputText id="name" value="#{editor.name}" required="true" />
+			<h:message for="name" styleClass="message" />
+
+			<h:outputLabel value="Address: " for="address" />
+			<h:inputText id="address" value="#{editor.address}" required="true" />
+			<h:message for="address" styleClass="message" />
+
+			<h:outputLabel value="Birthday: " for="birthday" />
+			<h:inputText id="birthday" value="#{editor.birthday}" required="true" />
+			<h:message for="birthday" styleClass="message" />
+
+			<h:commandButton id="save" value="Save" action="#{editor.save()}" />
+			<h:commandButton id="logout" value="Logout"
+				action="#{editor.logout()}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
